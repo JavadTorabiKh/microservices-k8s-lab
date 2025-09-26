@@ -21,6 +21,7 @@ graph TB
     style E fill:#fce4ec
     style F fill:#ffebee
 ```
+
 ## System Components:
  |Component |	Technology |	Port |	Description |
  |----------|--------|-------------|------------|
