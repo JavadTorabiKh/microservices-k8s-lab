@@ -9,11 +9,11 @@ from datetime import datetime, timedelta
 app = FastAPI(title="Auth Service", version="1.0.0")
 security = HTTPBearer()
 
-# اتصال به Redis
+# connect to Redis
 redis_client = redis.Redis(host="redis-service", port=6379, decode_responses=True)
 
 
-# مدل‌های داده
+# data model
 class UserLogin(BaseModel):
     username: str
     password: str
@@ -30,7 +30,7 @@ class Token(BaseModel):
     token_type: str
 
 
-# کاربران نمونه (در حالت واقعی از دیتابیس استفاده میشه)
+# sample client
 sample_users = {
     "admin": {
         "username": "admin",
