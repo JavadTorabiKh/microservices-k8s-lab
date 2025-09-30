@@ -1,7 +1,7 @@
 {
   "name": "products-service",
   "version": "1.0.0",
-  "description": "Products microservice",
+  "description": "Products management microservice",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
