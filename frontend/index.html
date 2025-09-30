@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microservices System - Educational</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <style>
+        /* Custom styles */
+        .service-card {
+            transition: transform 0.2s;
+            border: 1px solid #e9ecef;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .product-card {
+            height: 100%;
+            border: 1px solid #dee2e6;
+        }
+        .product-card:hover {
+            border-color: #0d6efd;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .health-status {
+            font-size: 0.9rem;
+        }
+        .cache-badge {
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-cloud-arrow-up"></i>
+                Microservices System
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Authentication Section -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card service-card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="bi bi-shield-lock"></i>
+                            Authentication
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <form id="loginForm">
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">Username</label>
+                                        <input type="text" class="form-control" id="username" value="admin" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password" value="password" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-box-arrow-in-right"></i>
+                                        Login
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="col-md-6">
+                                <div id="userInfo" class="d-none">
+                                    <h6>User Information:</h6>
+                                    <div id="userDetails" class="bg-light p-3 rounded"></div>
+                                    <button id="logoutBtn" class="btn btn-warning btn-sm mt-2">
+                                        <i class="bi bi-box-arrow-right"></i>
+                                        Logout
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Section -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card service-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">
+                            <i class="bi bi-box-seam"></i>
+                            Products
+                        </h5>
+                        <button id="loadProducts" class="btn btn-success btn-sm">
+                            <i class="bi bi-arrow-clockwise"></i>
+                            Load Products
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div id="productsContainer" class="row">
+                            <div class="col-12 text-center">
+                                <p class="text-muted">Click load button to see products</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Status Section -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card service-card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="bi bi-heart-pulse"></i>
+                            Services Status
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" id="servicesStatus">
+                            <!-- Services status will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & Custom JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
