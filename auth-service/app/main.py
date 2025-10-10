@@ -43,9 +43,9 @@ sample_users = {
         "full_name": "System Administrator"
     },
     "user1": {
-        "username": "user1",
-        "password": "123456",
-        "email": "user1@example.com",
+        "username": "user name",
+        "password": "******",
+        "email": "userName@example.com",
         "full_name": "Sample User One"
     }
 }
@@ -54,7 +54,7 @@ sample_users = {
 async def login(user_data: UserLogin):
     """
     User login endpoint
-    Validates credentials and returns JWT-like token
+    Validates credentials and returns JWT-like tokens
     """
     user = sample_users.get(user_data.username)
     
