@@ -1,18 +1,15 @@
-# Use Node.js base image
 FROM node:18-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Copy package files and install dependencies
+# Copy package files first for better layer caching
 COPY package*.json ./
-RUN npm install
+RUN npm install --production
 
-# Copy application code
+# Copy source code
 COPY . .
 
-# Expose port
 EXPOSE 8002
 
-# Start the application
-CMD ["npm", "start"]
+# Use node directly instead of npm for better signal handling
+CMD ["node", "server.js"]
