@@ -6,6 +6,7 @@ import json
 import uuid
 from datetime import datetime, timedelta
 
+
 # Create FastAPI application
 app = FastAPI(
     title="Auth Service",
@@ -110,10 +111,11 @@ async def health_check():
         "timestamp": datetime.now().isoformat()
     }
 
+
 @app.get("/")
 async def root():
     """Service root endpoint"""
-    return {"message": "Auth Service is running"}
+    return {"message": "Auth Service is running ..."}
 
 if __name__ == "__main__":
     import uvicorn
