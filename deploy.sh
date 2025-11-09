@@ -2,7 +2,6 @@
 
 # Microservices Deployment Script
 set -e
-
 echo "🚀 Starting Microservices Deployment..."
 
 # Colors for output
